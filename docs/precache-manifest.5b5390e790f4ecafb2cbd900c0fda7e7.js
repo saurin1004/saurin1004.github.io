@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6b13328765c3af4d3702683586b9285",
+    "revision": "37c9109210705496eb5c09919c05880a",
     "url": "/index.html"
   },
   {
-    "revision": "123ae1004e5fb2e7a472",
+    "revision": "d8dc40067572fed75133",
     "url": "/static/css/main.768b184b.chunk.css"
   },
   {
-    "revision": "87e010bf0e03d71b9606",
-    "url": "/static/js/2.2dee7f2e.chunk.js"
+    "revision": "0494fd0009f9055921fa",
+    "url": "/static/js/2.831ccfd9.chunk.js"
   },
   {
-    "revision": "123ae1004e5fb2e7a472",
-    "url": "/static/js/main.838b079e.chunk.js"
+    "revision": "d8dc40067572fed75133",
+    "url": "/static/js/main.f9c44122.chunk.js"
   },
   {
     "revision": "f4163cc1361175add5e6",
@@ -294,5 +294,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d63630893eb8cb64af65f395d393c481",
     "url": "/static/media/ui_ux_design.d6363089.svg"
+  },
+  {
+    "revision": "ea9fcd696df65febe516a30bc99da87a",
+    "url": "/static/media/wikimedia_logo.ea9fcd69.png"
   }
 ]);
