@@ -385,7 +385,7 @@ export const projects = [...projectsData.data].sort(
 
 // Public repo count is fetched live from the GitHub API (see useGithubRepoCount);
 // this number is only shown if GitHub can't be reached.
-export const githubFallbackRepoCount = 11;
+export const githubFallbackRepoCount = 10;
 
 export const stats = [
   { value: "4.00", label: "GPA, M.S. CS at ASU" },
