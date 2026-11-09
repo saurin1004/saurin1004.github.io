@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saurin Prajapati — Software Engineer</title>
+    <meta
+      name="description"
+      content="Saurin Prajapati is a software engineer building backend services, event-driven systems and ML-powered pipelines. M.S. Computer Science at Arizona State University."
+    />
+    <meta name="author" content="Saurin Prajapati" />
+    <meta name="theme-color" content="#0c0f14" />
+    <link rel="canonical" href="https://saurin1004.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Saurin Prajapati" />
+    <meta property="og:title" content="Saurin Prajapati — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Backend services, event-driven systems and ML-powered pipelines. M.S. CS at Arizona State University."
+    />
+    <meta property="og:url" content="https://saurin1004.github.io/" />
+    <meta property="og:image" content="https://saurin1004.github.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://saurin1004.github.io/og-image.png" />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap"
+    />
+    <link rel="preconnect" href="https://api.iconify.design" />
+
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+
+      // Single Page Apps for GitHub Pages (MIT, github.com/rafgraph/spa-github-pages):
+      // restores the real URL after 404.html redirected deep links here.
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body>
+    <noscript>
+      Saurin Prajapati, software engineer. This site needs JavaScript. Reach me at
+      prajapatisaurin8@gmail.com or github.com/saurin1004.
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>

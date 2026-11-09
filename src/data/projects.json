@@ -1,0 +1,156 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "masterPortfolio",
+      "createdAt": "2026-06-02",
+      "url": "https://github.com/saurin1004/masterPortfolio",
+      "description": "This site. A hand-built React portfolio with its own design system, light/dark themes, a ⌘K command palette and data-driven pages.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "HTML",
+          "iconifyClass": "logos-html-5"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "logos-css-3"
+        },
+        {
+          "name": "JavaScript",
+          "iconifyClass": "logos-javascript"
+        },
+        {
+          "name": "Dockerfile",
+          "iconifyClass": "simple-icons:docker"
+        }
+      ]
+    },
+    {
+      "id": "2=",
+      "name": "driveID",
+      "createdAt": "2025-12-04",
+      "url": "https://github.com/saurin1004/DriveID",
+      "description": "Decentralized platform based on a smart contract system that enables managing car identity, ownership, and access through blockchain technology.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "JavaScript",
+          "iconifyClass": "logos-javascript"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "logos-css-3"
+        },
+        {
+          "name": "Solidity",
+          "iconifyClass": "logos-solidity"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "aws-face-recognition-autoscaler",
+      "createdAt": "2025-03-25",
+      "url": "https://github.com/saurin1004/aws-face-recognition-autoscaler",
+      "description": "Scalable image & video recognition pipeline on AWS (Flask, EC2, S3, SQS, Greengrass, Lambda) using a PyTorch model and custom autoscaler that scales 0→N workers, handling 500+ concurrent requests while improving throughput (+40%), latency (-35%), and cost (-25%) vs. a static baseline.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "AWS S3",
+          "iconifyClass": "simple-icons:amazons3"
+        },
+        {
+          "name": "AWS Lambda",
+          "iconifyClass": "simple-icons:awslambda"
+        },
+        {
+          "name": "AWS SQS",
+          "iconifyClass": "simple-icons:amazonsqs"
+        },
+        {
+          "name": "AWS EC2",
+          "iconifyClass": "simple-icons:amazonec2"
+        },
+        {
+          "name": "Dockerfile",
+          "iconifyClass": "logos-docker"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "twitter-elasticsearch",
+      "createdAt": "2024-12-02",
+      "url": "https://github.com/saurin1004/twitter-elasticsearch",
+      "description": "Integrating Twitter data with Elasticsearch for efficient searching, filtering, and analysis",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "Elasticsearch",
+          "iconifyClass": "logos-elasticsearch"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "ML-model-deployment-using-Flask-and-GCP",
+      "createdAt": "2022-08-06",
+      "url": "https://github.com/saurin1004/ML-model-deployment-using-Flask-and-GCP",
+      "description": "Salary prediction ML model deployment using Flask and GCP.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "Google Cloud Platform",
+          "iconifyClass": "simple-icons:googlecloud"
+        },
+        {
+          "name": "HTML",
+          "iconifyClass": "logos-html-5"
+        },
+        {
+          "name": "CSS",
+          "iconifyClass": "logos-css-3"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "pyshop-e-commerce-webapp",
+      "createdAt": "2021-10-20",
+      "url": "https://github.com/saurin1004/Pyshop_e-commerce_webapp",
+      "description": "An e-commerce web application made using Django framework.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "Django",
+          "iconifyClass": "logos-django"
+        },
+        {
+          "name": "HTML",
+          "iconifyClass": "logos-html-5"
+        },
+        {
+          "name": "SQLite",
+          "iconifyClass": "logos-sqlite"
+        }
+      ]
+    }
+  ]
+}

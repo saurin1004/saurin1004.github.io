@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "name": "saurin-portfolio",
+  "version": "0.1.0",
+  "description": "Personal website of Saurin Prajapati \u2014 saurin1004.github.io",
+  "author": "Saurin Prajapati",
+  "homepage": "https://saurin1004.github.io",
+  "scripts": {
+    "build": "react-scripts --openssl-legacy-provider build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.6.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "2.0.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  }
+}
