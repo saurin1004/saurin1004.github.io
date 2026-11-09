@@ -31,8 +31,8 @@
       "name": "driveID",
       "createdAt": "2025-12-04",
       "url": "https://github.com/saurin1004/DriveID",
-      "description": "Decentralized platform based on a smart contract system that enables managing car identity, ownership, and access through blockchain technology.",
-      "isFork": false,
+      "description": "Team project (CSE 540, ASU): a smart-contract platform for managing vehicle identity, ownership and access on Ethereum. My role: contract implementation support, deploy scripts, testing and documentation.",
+      "isFork": true,
       "languages": [
         {
           "name": "JavaScript",
