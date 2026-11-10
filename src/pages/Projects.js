@@ -1,8 +1,15 @@
 import React, { useMemo, useState } from "react";
-import { FiArrowUpRight, FiGithub, FiSearch } from "react-icons/fi";
+import { FiGithub, FiSearch } from "react-icons/fi";
 import Seo from "../components/Seo";
+import ProjectCard from "../components/ProjectCard";
 import { PageHead, Reveal, useGithubRepoCount } from "../components/ui";
-import { githubFallbackRepoCount, profile, projects } from "../portfolio";
+import {
+  featuredProjects,
+  githubFallbackRepoCount,
+  otherProjects,
+  profile,
+  projects,
+} from "../portfolio";
 
 export default function Projects() {
   const [query, setQuery] = useState("");
@@ -24,16 +31,18 @@ export default function Projects() {
     ];
   }, []);
 
-  const shown = projects.filter((p) => {
-    const q = query.trim().toLowerCase();
-    const matchesQuery =
-      !q ||
-      `${p.name} ${p.description} ${p.languages.map((l) => l.name).join(" ")}`
-        .toLowerCase()
-        .includes(q);
-    const matchesTech =
-      tech === "All" || p.languages.some((l) => l.name === tech);
-    return matchesQuery && matchesTech;
+  const q = query.trim().toLowerCase();
+  const filtering = q !== "" || tech !== "All";
+  const matches = projects.filter((p) => {
+    const text = `${p.name} ${p.title || ""} ${p.description} ${(
+      p.highlights || []
+    ).join(" ")} ${p.languages.map((l) => l.name).join(" ")} ${(
+      p.labels || []
+    ).join(" ")}`.toLowerCase();
+    return (
+      (!q || text.includes(q)) &&
+      (tech === "All" || p.languages.some((l) => l.name === tech))
+    );
   });
 
   return (
@@ -41,12 +50,12 @@ export default function Projects() {
       <Seo
         title="Projects"
         path="/projects"
-        description="Projects by Saurin Prajapati: cloud autoscaling, blockchain, search and machine learning."
+        description="Projects by Saurin Prajapati: a queue-driven autoscaler, a real-time multi-device habit tracker, Kafka and Cassandra streaming, search and ML deployments."
       />
       <PageHead
         eyebrow="projects"
         title="Things I've built"
-        lead="A hand-picked selection of cloud pipelines, blockchain apps, search and ML deployments. Filter by tech or search for something specific."
+        lead="Distributed systems, real-time sync, streaming pipelines and ML deployments. The featured three are the ones I'd walk you through first."
       />
       <section className="container">
         <div className="toolbar">
@@ -75,39 +84,35 @@ export default function Projects() {
           </div>
         </div>
 
-        {shown.length === 0 ? (
-          <p className="empty">No projects match that filter yet.</p>
+        {filtering ? (
+          matches.length === 0 ? (
+            <p className="empty">No projects match that filter yet.</p>
+          ) : (
+            <div className="project-grid">
+              {matches.map((p) => (
+                <ProjectCard key={p.id} project={p} />
+              ))}
+            </div>
+          )
         ) : (
-          <div className="project-grid">
-            {shown.map((p) => (
-              <a
-                key={p.id}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card card-hover project-card"
-              >
-                <div className="project-top">
-                  <span>
-                    {new Date(p.createdAt).toLocaleDateString("en-US", {
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </span>
-                  <FiArrowUpRight aria-hidden="true" />
-                </div>
-                <h3>{p.name}</h3>
-                <p>{p.description}</p>
-                <div className="tag-list">
-                  {p.languages.map((l) => (
-                    <span className="tag" key={l.name}>
-                      {l.name}
-                    </span>
-                  ))}
-                </div>
-              </a>
-            ))}
-          </div>
+          <>
+            <h2 className="subsection-title" style={{ marginTop: 8 }}>
+              Featured
+            </h2>
+            <div className="featured-grid">
+              {featuredProjects.map((p, i) => (
+                <Reveal key={p.id} delay={i * 80}>
+                  <ProjectCard project={p} featured />
+                </Reveal>
+              ))}
+            </div>
+            <h2 className="subsection-title">More projects</h2>
+            <div className="project-grid">
+              {otherProjects.map((p) => (
+                <ProjectCard key={p.id} project={p} />
+              ))}
+            </div>
+          </>
         )}
 
         <Reveal

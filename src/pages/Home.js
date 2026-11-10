@@ -1,11 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FiArrowRight,
-  FiArrowUpRight,
-  FiCopy,
-  FiFileText,
-} from "react-icons/fi";
+import { FiArrowRight, FiCopy, FiFileText } from "react-icons/fi";
 import Seo from "../components/Seo";
 import {
   Reveal,
@@ -15,11 +10,12 @@ import {
   useGithubRepoCount,
 } from "../components/ui";
 import { copyText } from "../components/Layout";
+import ProjectCard from "../components/ProjectCard";
 import {
   about,
   experience,
   profile,
-  projects,
+  featuredProjects,
   skills,
   socialLinks,
   stats,
@@ -71,7 +67,6 @@ function Terminal() {
 export default function Home({ toast }) {
   const firstName = profile.name.split(" ")[0];
   const recent = experience.flatMap((g) => g.items).slice(0, 3);
-  const featured = projects.slice(0, 3);
   const repoCount = useGithubRepoCount(profile.handle, githubFallbackRepoCount);
 
   return (
@@ -239,35 +234,16 @@ export default function Home({ toast }) {
         <Reveal className="section-head">
           <div>
             <div className="eyebrow">projects</div>
-            <h2 className="section-title">Recent builds</h2>
+            <h2 className="section-title">Selected work</h2>
           </div>
           <Link to="/projects" className="link-arrow">
             All projects <FiArrowRight aria-hidden="true" />
           </Link>
         </Reveal>
-        <div className="project-grid">
-          {featured.map((p, i) => (
+        <div className="featured-grid">
+          {featuredProjects.map((p, i) => (
             <Reveal key={p.id} delay={i * 80}>
-              <a
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card card-hover project-card"
-              >
-                <div className="project-top">
-                  <span>{new Date(p.createdAt).getFullYear()}</span>
-                  <FiArrowUpRight aria-hidden="true" />
-                </div>
-                <h3>{p.name}</h3>
-                <p>{p.description}</p>
-                <div className="tag-list">
-                  {p.languages.slice(0, 4).map((l) => (
-                    <span className="tag" key={l.name}>
-                      {l.name}
-                    </span>
-                  ))}
-                </div>
-              </a>
+              <ProjectCard project={p} featured />
             </Reveal>
           ))}
         </div>

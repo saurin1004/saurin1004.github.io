@@ -32,7 +32,7 @@ export const profile = {
     "https://drive.google.com/file/d/1ugEpYTjMbdkCfCk1bdDl4KCmOfJe0QUk/view",
   asuProfile: "https://search.asu.edu/profile/5094956",
   githubProfile: "https://github.com/saurin1004",
-  sourceRepo: "https://github.com/saurin1004/masterPortfolio",
+  sourceRepo: "https://github.com/saurin1004/saurin1004.github.io",
 };
 
 // Short "about me" paragraphs shown on the home page. Edit freely.
@@ -40,6 +40,7 @@ export const about = [
   "I'm a software engineer who likes the unglamorous parts of systems: the queues, retries, indexes and test suites that decide whether a product actually works on a bad day.",
   "Right now I'm at the Wikimedia Foundation, building Python services that turn machine-learning predictions into signals editors can act on. Before that I spent a year and a half at Sutra Management modernising enterprise order-management systems with Spring Boot, Kafka and MySQL.",
   "I'm finishing my M.S. in Computer Science at Arizona State University with a 4.00 GPA, focused on distributed systems, cloud computing, security and machine learning.",
+  "Outside work I build things end to end: a queue-driven autoscaler that scales to zero, a habit tracker with real-time sync across devices, and streaming pipelines on Kafka and Cassandra.",
 ];
 
 export const socialLinks = [
@@ -93,8 +94,10 @@ export const skills = [
         icon: "simple-icons:springboot",
         color: "#6DB33F",
       },
+      { name: "FastAPI", icon: "simple-icons:fastapi", color: "#009688" },
       { name: "Kafka", icon: "simple-icons:apachekafka" },
       { name: "React", icon: "simple-icons:react", color: "#61DAFB" },
+      { name: "Firebase", icon: "simple-icons:firebase", color: "#FFCA28" },
       { name: "Node.js", icon: "simple-icons:nodedotjs", color: "#339933" },
       { name: "Django", icon: "simple-icons:django", color: "#2BA977" },
       { name: "Flask", icon: "simple-icons:flask" },
@@ -378,14 +381,18 @@ export const codingProfiles = [
   },
 ];
 
-// Projects come from src/data/projects.json, newest first.
-export const projects = [...projectsData.data].sort(
-  (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-);
+// Projects come from src/data/projects.json: featured ones first (by their
+// "featured" rank), then everything else, newest first.
+export const projects = [...projectsData.data].sort((a, b) => {
+  if (a.featured || b.featured) return (a.featured || 99) - (b.featured || 99);
+  return new Date(b.createdAt) - new Date(a.createdAt);
+});
+export const featuredProjects = projects.filter((p) => p.featured);
+export const otherProjects = projects.filter((p) => !p.featured);
 
 // Public repo count is fetched live from the GitHub API (see useGithubRepoCount);
 // this number is only shown if GitHub can't be reached.
-export const githubFallbackRepoCount = 10;
+export const githubFallbackRepoCount = 11;
 
 export const stats = [
   { value: "4.00", label: "GPA, M.S. CS at ASU" },

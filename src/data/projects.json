@@ -1,155 +1,152 @@
 {
   "data": [
     {
-      "id": "1",
-      "name": "masterPortfolio",
-      "createdAt": "2026-06-02",
-      "url": "https://github.com/saurin1004/masterPortfolio",
-      "description": "This site. A hand-built React portfolio with its own design system, light/dark themes, a ⌘K command palette and data-driven pages.",
-      "isFork": false,
-      "languages": [
-        {
-          "name": "HTML",
-          "iconifyClass": "logos-html-5"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        },
-        {
-          "name": "JavaScript",
-          "iconifyClass": "logos-javascript"
-        },
-        {
-          "name": "Dockerfile",
-          "iconifyClass": "simple-icons:docker"
-        }
-      ]
-    },
-    {
-      "id": "2=",
-      "name": "driveID",
-      "createdAt": "2025-12-04",
-      "url": "https://github.com/saurin1004/DriveID",
-      "description": "Team project (CSE 540, ASU): a smart-contract platform for managing vehicle identity, ownership and access on Ethereum. My role: contract implementation support, deploy scripts, testing and documentation.",
-      "isFork": true,
-      "languages": [
-        {
-          "name": "JavaScript",
-          "iconifyClass": "logos-javascript"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        },
-        {
-          "name": "Solidity",
-          "iconifyClass": "logos-solidity"
-        }
-      ]
-    },
-    {
-      "id": "3",
+      "id": "aws-face-recognition-autoscaler",
       "name": "aws-face-recognition-autoscaler",
+      "title": "Queue-driven autoscaler for an inference API",
       "createdAt": "2025-03-25",
       "url": "https://github.com/saurin1004/aws-face-recognition-autoscaler",
-      "description": "Async image-inference service with a queue-driven autoscaler that scales workers out with the backlog and back to zero. Per-job results, idempotent workers, runs on SQS, S3, DynamoDB and EC2 or fully local. A redesign of my CSE 546 project that fixes its result mix-ups.",
-      "isFork": false,
+      "description": "An async image-inference service whose controller scales workers out with the queue backlog and back to zero. A from-scratch redesign of my CSE 546 project that fixes the race that sent results to the wrong requests.",
+      "featured": 1,
+      "highlights": [
+        "100/100 results matched to the right request under 25 concurrent clients; the course version got at most 19/100 right",
+        "Scales 0 → 5 workers under load and back to 0 about 3 s after it ends",
+        "24 tests, including AWS (SQS, S3, DynamoDB, EC2) against moto; CI on Python 3.11 to 3.13"
+      ],
+      "labels": [],
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        },
-        {
-          "name": "FastAPI",
-          "iconifyClass": "simple-icons:fastapi"
-        },
-        {
-          "name": "AWS SQS",
-          "iconifyClass": "simple-icons:amazonsqs"
-        },
-        {
-          "name": "AWS S3",
-          "iconifyClass": "simple-icons:amazons3"
-        },
-        {
-          "name": "DynamoDB",
-          "iconifyClass": "simple-icons:amazondynamodb"
-        },
-        {
-          "name": "AWS EC2",
-          "iconifyClass": "simple-icons:amazonec2"
-        }
+        { "name": "Python" },
+        { "name": "FastAPI" },
+        { "name": "AWS SQS" },
+        { "name": "AWS S3" },
+        { "name": "DynamoDB" },
+        { "name": "AWS EC2" }
       ]
     },
     {
-      "id": "4",
+      "id": "habitnest",
+      "name": "HabitNest",
+      "title": "Habit tracker with real-time multi-device sync",
+      "createdAt": "2025-04-26",
+      "url": "https://github.com/saurin1004/HabitNest",
+      "demo": "https://saurin1004.github.io/HabitNest/",
+      "description": "A daily habit tracker with streaks and a 7-day history. Sign in with Google or email to sync across devices in real time, offline included, or use it as a guest.",
+      "featured": 2,
+      "highlights": [
+        "Field-level Firestore writes, so edits from different devices merge instead of overwriting each other",
+        "Security rules plus multi-device sync covered by 21 tests on the Firestore emulator, run in CI",
+        "Drag to reorder with mouse, touch or keyboard; deployed by GitHub Actions on every push"
+      ],
+      "labels": ["Live demo"],
+      "languages": [
+        { "name": "React" },
+        { "name": "Firebase Auth" },
+        { "name": "Firestore" },
+        { "name": "Vitest" }
+      ]
+    },
+    {
+      "id": "real-time-iot-data-streaming",
+      "name": "real-time-iot-data-streaming",
+      "title": "Real-time IoT streaming pipeline",
+      "createdAt": "2026-06-09",
+      "url": "https://github.com/saurin1004/real-time-iot-data-streaming",
+      "description": "Simulated Apple Watch telemetry streamed through Kafka into Cassandra, served over a Flask REST API and visualised in a live Dash dashboard.",
+      "featured": 3,
+      "highlights": [
+        "Kafka producer and consumer group writing six time-series Cassandra tables",
+        "Twelve REST endpoints feeding a dashboard that refreshes every minute",
+        "Whole stack runs locally with Docker Compose"
+      ],
+      "labels": [],
+      "languages": [
+        { "name": "Kafka" },
+        { "name": "Cassandra" },
+        { "name": "Python" },
+        { "name": "Flask" },
+        { "name": "Docker" }
+      ]
+    },
+    {
+      "id": "twitter-elasticsearch",
       "name": "twitter-elasticsearch",
-      "createdAt": "2024-12-02",
+      "createdAt": "2024-12-03",
       "url": "https://github.com/saurin1004/twitter-elasticsearch",
-      "description": "Integrating Twitter data with Elasticsearch for efficient searching, filtering, and analysis",
-      "isFork": false,
+      "description": "Tweet search and sentiment pipeline: collects tweets from the Twitter API v2, scores sentiment with TextBlob, indexes them in Elasticsearch for full-text search and serves results and Plotly charts from Flask.",
+      "labels": [],
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        },
-        {
-          "name": "Elasticsearch",
-          "iconifyClass": "logos-elasticsearch"
-        }
+        { "name": "Python" },
+        { "name": "Elasticsearch" },
+        { "name": "Flask" },
+        { "name": "NLP" }
       ]
     },
     {
-      "id": "5",
+      "id": "edge-cloud-face-recognition",
+      "name": "edge-cloud-face-recognition",
+      "createdAt": "2026-06-23",
+      "url": "https://github.com/saurin1004/edge-cloud-face-recognition",
+      "description": "Two-stage face recognition: MTCNN detection at the edge on AWS IoT Greengrass, recognition on AWS Lambda, decoupled with SQS. 100/100 correct at about 0.78 s average latency.",
+      "labels": ["Design write-up"],
+      "languages": [
+        { "name": "AWS IoT Greengrass" },
+        { "name": "AWS Lambda" },
+        { "name": "AWS SQS" },
+        { "name": "PyTorch" }
+      ]
+    },
+    {
+      "id": "ml-model-deployment",
       "name": "ML-model-deployment-using-Flask-and-GCP",
-      "createdAt": "2022-08-06",
+      "createdAt": "2022-06-18",
       "url": "https://github.com/saurin1004/ML-model-deployment-using-Flask-and-GCP",
-      "description": "Salary prediction ML model deployment using Flask and GCP.",
-      "isFork": false,
+      "description": "A scikit-learn salary-prediction model taken from training to a hosted web service with Flask, gunicorn and Google App Engine.",
+      "labels": [],
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        },
-        {
-          "name": "Google Cloud Platform",
-          "iconifyClass": "simple-icons:googlecloud"
-        },
-        {
-          "name": "HTML",
-          "iconifyClass": "logos-html-5"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        }
+        { "name": "Python" },
+        { "name": "scikit-learn" },
+        { "name": "Flask" },
+        { "name": "Google Cloud" }
       ]
     },
     {
-      "id": "6",
-      "name": "pyshop-e-commerce-webapp",
-      "createdAt": "2021-10-20",
-      "url": "https://github.com/saurin1004/Pyshop_e-commerce_webapp",
-      "description": "Team project (Nirma University): a Django e-commerce app with sign-up and login, a product catalogue with offers, per-user carts and order placement.",
-      "isFork": false,
+      "id": "face-recognition-model-gcp",
+      "name": "Face-recognition-model-GCP",
+      "createdAt": "2022-07-06",
+      "url": "https://github.com/saurin1004/Face-recognition-model-GCP",
+      "description": "Face identification with OpenFace embeddings and a Keras classifier, aligned with dlib and served through a Flask upload-and-predict app.",
+      "labels": [],
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        },
-        {
-          "name": "Django",
-          "iconifyClass": "logos-django"
-        },
-        {
-          "name": "HTML",
-          "iconifyClass": "logos-html-5"
-        },
-        {
-          "name": "SQLite",
-          "iconifyClass": "logos-sqlite"
-        }
+        { "name": "Python" },
+        { "name": "Keras" },
+        { "name": "OpenCV" },
+        { "name": "Flask" }
+      ]
+    },
+    {
+      "id": "driveid",
+      "name": "driveID",
+      "createdAt": "2025-12-08",
+      "url": "https://github.com/saurin1004/driveID",
+      "description": "Decentralized vehicle identity, ownership and access management with Solidity smart contracts and a React + Ethers.js frontend. My role: contract implementation support, deploy scripts, testing and documentation.",
+      "labels": ["Team project"],
+      "languages": [
+        { "name": "Solidity" },
+        { "name": "React" },
+        { "name": "Ethereum" }
+      ]
+    },
+    {
+      "id": "pyshop",
+      "name": "Pyshop_e-commerce_webapp",
+      "createdAt": "2021-10-21",
+      "url": "https://github.com/saurin1004/Pyshop_e-commerce_webapp",
+      "description": "A Django e-commerce app with sign-up and login, a product catalogue with offers, per-user carts and order placement.",
+      "labels": ["Team project"],
+      "languages": [
+        { "name": "Python" },
+        { "name": "Django" },
+        { "name": "SQLite" }
       ]
     }
   ]
