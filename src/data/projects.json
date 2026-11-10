@@ -53,7 +53,7 @@
       "name": "aws-face-recognition-autoscaler",
       "createdAt": "2025-03-25",
       "url": "https://github.com/saurin1004/aws-face-recognition-autoscaler",
-      "description": "Scalable image & video recognition pipeline on AWS (Flask, EC2, S3, SQS, Greengrass, Lambda) using a PyTorch model and custom autoscaler that scales 0→N workers, handling 500+ concurrent requests while improving throughput (+40%), latency (-35%), and cost (-25%) vs. a static baseline.",
+      "description": "Async image-inference service with a queue-driven autoscaler that scales workers out with the backlog and back to zero. Per-job results, idempotent workers, runs on SQS, S3, DynamoDB and EC2 or fully local. A redesign of my CSE 546 project that fixes its result mix-ups.",
       "isFork": false,
       "languages": [
         {
@@ -61,24 +61,24 @@
           "iconifyClass": "logos-python"
         },
         {
-          "name": "AWS S3",
-          "iconifyClass": "simple-icons:amazons3"
-        },
-        {
-          "name": "AWS Lambda",
-          "iconifyClass": "simple-icons:awslambda"
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi"
         },
         {
           "name": "AWS SQS",
           "iconifyClass": "simple-icons:amazonsqs"
         },
         {
-          "name": "AWS EC2",
-          "iconifyClass": "simple-icons:amazonec2"
+          "name": "AWS S3",
+          "iconifyClass": "simple-icons:amazons3"
         },
         {
-          "name": "Dockerfile",
-          "iconifyClass": "logos-docker"
+          "name": "DynamoDB",
+          "iconifyClass": "simple-icons:amazondynamodb"
+        },
+        {
+          "name": "AWS EC2",
+          "iconifyClass": "simple-icons:amazonec2"
         }
       ]
     },
