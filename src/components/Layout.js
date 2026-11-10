@@ -233,6 +233,7 @@ export function CommandPalette({ open, onClose, onToggleTheme, toast }) {
   const [query, setQuery] = useState("");
   const [index, setIndex] = useState(0);
   const inputRef = useRef(null);
+  const listRef = useRef(null);
 
   const actions = useMemo(() => {
     const ext = (url) => () =>
@@ -293,6 +294,31 @@ export function CommandPalette({ open, onClose, onToggleTheme, toast }) {
   }, [open]);
   useEffect(() => setIndex(0), [query]);
 
+  // Keep the highlighted item visible while moving with the arrow keys.
+  useEffect(() => {
+    const list = listRef.current;
+    if (!open || !list) return;
+    if (index === 0) {
+      list.scrollTop = 0; // also reveals the first group heading
+      return;
+    }
+    const item = list.querySelector(`#cmdk-${index}`);
+    if (!item) return;
+    // If the item starts a group, keep its heading in view too.
+    const heading = item.previousElementSibling;
+    const top =
+      heading && heading.classList.contains("cmdk-group") ? heading : item;
+    if (top.offsetTop < list.scrollTop) {
+      list.scrollTop = top.offsetTop - 8;
+    } else if (
+      item.offsetTop + item.offsetHeight >
+      list.scrollTop + list.clientHeight
+    ) {
+      list.scrollTop =
+        item.offsetTop + item.offsetHeight - list.clientHeight + 8;
+    }
+  }, [index, open]);
+
   if (!open) return null;
 
   const run = (a) => {
@@ -340,7 +366,7 @@ export function CommandPalette({ open, onClose, onToggleTheme, toast }) {
           />
           <span className="kbd">esc</span>
         </div>
-        <ul className="cmdk-list" id="cmdk-list" role="listbox">
+        <ul className="cmdk-list" id="cmdk-list" role="listbox" ref={listRef}>
           {results.length === 0 && <li className="cmdk-group">No matches</li>}
           {results.map((a, i) => {
             const Icon = a.icon;
