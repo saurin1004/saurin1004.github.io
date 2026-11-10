@@ -131,7 +131,7 @@
       "name": "pyshop-e-commerce-webapp",
       "createdAt": "2021-10-20",
       "url": "https://github.com/saurin1004/Pyshop_e-commerce_webapp",
-      "description": "An e-commerce web application made using Django framework.",
+      "description": "Team project (Nirma University): a Django e-commerce app with sign-up and login, a product catalogue with offers, per-user carts and order placement.",
       "isFork": false,
       "languages": [
         {
